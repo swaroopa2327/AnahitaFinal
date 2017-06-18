@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.anahitagardens.anahita.dao.UserDao;
 import com.anahitagardens.anahita.model.Product;
+import com.anahitagardens.anahita.model.Supplier;
 import com.anahitagardens.anahita.model.User;
 import com.google.gson.Gson;
 
@@ -33,6 +34,18 @@ public class UserDaoImpl implements UserDao {
 			s.close();
 			return null;
 	}
+	
+	@Override
+	public String updateUser (String user_name, User u) {
+		Session s = sessionFactory.openSession();
+		Transaction t = s.getTransaction();
+		t.begin();
+		s.update(u);
+		t.commit();
+		s.close();
+		return null;
+	}
+	
 	@Override
 	public String viewUsers() {
 		
@@ -60,12 +73,6 @@ public class UserDaoImpl implements UserDao {
 		return us;
 	}
 
-	
-	
-	
-	
-	
-	
 	
 	@Override
 	@Transactional

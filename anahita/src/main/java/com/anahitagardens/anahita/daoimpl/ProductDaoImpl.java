@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.anahitagardens.anahita.dao.ProductDao;
 import com.anahitagardens.anahita.model.Category;
 import com.anahitagardens.anahita.model.Product;
+import com.anahitagardens.anahita.model.User;
 import com.google.gson.Gson;
 
 @Repository
@@ -48,13 +49,13 @@ public class ProductDaoImpl implements ProductDao {
 		//return the variable having list in JsonFormat
 		return prodListJson;		
 	}
-	/**@Override
-	public String viewProductByCategory(){
+	@Override
+	public String viewProductByCategory(String cat_id){
 		Session s = sessionFactory.openSession();
 		Transaction t = s.getTransaction();
 		t.begin();
 		//get product table as list and save it in list object.it is in Gson Format
-		List<Product>prodByCategory = s.createQuery).list()
+		List<Product>prodByCategory = s.createQuery("from Product").list();
 		Gson g = new Gson();
 		//convert to Json format and store it another variable 
 		String prodListByCatJson = g.toJson(prodByCategory);
@@ -62,8 +63,8 @@ public class ProductDaoImpl implements ProductDao {
 		s.close();
 		//return the variable having list in JsonFormat
 		return prodListByCatJson;		
-	}**/
 	
+	}
 	
 	
 	
@@ -86,13 +87,7 @@ public class ProductDaoImpl implements ProductDao {
 		Session s = sessionFactory.openSession();
 		Transaction t = s.getTransaction();
 		t.begin();
-		Product oneproductobject = (Product)s.get(Product.class,prod_id);
-		oneproductobject.setCatId(prod.getCatId());
-		oneproductobject.setsId(prod.getsId());
-		oneproductobject.setpDesc(prod.getpDesc());
-		oneproductobject.setpName(prod.getpName());
-		oneproductobject.setpPrice(prod.getpPrice());
-		s.update(oneproductobject);
+		s.update(prod);
 		t.commit();
 		s.close();
 		return null;

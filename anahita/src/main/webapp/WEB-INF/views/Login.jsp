@@ -56,6 +56,9 @@
 	<h3 class="snippets text-center">${msg}</h3>
 	<h3 class="snippets text-center">${error}</h3>
     <h3 class="snippets text-center">${logout}</h3>
+    <h3 class="snippets text-center">${msguser}</h3>
+    
+    
 	
 
 	<!-- <h3 class ="snippets text-center">${msg3 }</h3>-->
@@ -100,11 +103,11 @@
 
 									<div>
 										<button type="submit"
-											class="login-button btn-primary btn-md col-xs-4 ">Login
+											class="login-button btn-primary btn-md  ">Login
 										</button>
 									</div>
 
-									<div class="etc-login-form pull-right">
+									<div class="etc-login-form " style ="margin-top:25px">
 										<p>
 											New user ? <a href="SignUp"><b>Sign Up</b></a>
 										</p>

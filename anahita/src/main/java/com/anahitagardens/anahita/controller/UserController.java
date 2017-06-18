@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.anahitagardens.anahita.dao.UserDao;
+import com.anahitagardens.anahita.model.Supplier;
 import com.anahitagardens.anahita.model.User;
 import com.google.gson.Gson;
 
@@ -30,6 +31,7 @@ public class UserController
 	{
 		ModelAndView mv = new ModelAndView("SignUp");
 		mv.addObject("User", new User());
+		mv.addObject("check", "true");
 		return mv;
 	}
 
@@ -152,7 +154,7 @@ public class UserController
 		return mv;
 	} 
 	
-	@RequestMapping("/viewOne")
+	@RequestMapping("/viewMyProfile")
 	public ModelAndView viewauser(@RequestParam("getId") String user_name,HttpSession session) {
 		Gson g = new Gson();
 		String oneUser = g.toJson(udao.viewOneUser(user_name));
@@ -160,6 +162,21 @@ public class UserController
 		mv.addObject("oneUserModel", oneUser);
 		return mv;
 	}
-	
-	
+	/*
+	@RequestMapping("/editMyProfile")
+	public ModelAndView editOneUser(@RequestParam("getuid") String username,HttpSession session) {
+		User u  = udao.viewOneUser(username);
+		ModelAndView mv = new ModelAndView("SignUp", "User", u);
+		mv.addObject("check", "false");
+		return mv;
+	}**/
+
+    /*
+	@RequestMapping(value = "/updateUser", method = RequestMethod.POST)
+	public ModelAndView updateuser(@ModelAttribute("User") User u,HttpSession session) {
+		udao.updateUser(u.getUsername(),u);
+		ModelAndView mv = new ModelAndView("Login");
+		mv.addObject("logout","Login to access updated profile");	
+		return new ModelAndView("redirect:/logout");
+	}*/
 }

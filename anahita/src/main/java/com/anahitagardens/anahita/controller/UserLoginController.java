@@ -44,7 +44,7 @@ ProductDao pdao;
 			            Model model,HttpSession session)
 	{
 		if(error!=null)
-		model.addAttribute("error","Invalid Username or Password.. Please enter valid username and password");
+		model.addAttribute("error","Invalid Username or Password.. Please enter valid username and password or Sign Up if you are a new User");
 		if(logout!=null)
 		model.addAttribute("logout","Logged out successfully");		
 		return "Login";

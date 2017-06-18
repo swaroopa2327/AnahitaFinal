@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
- <meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Anahita Gardens - Contact Us</title>
 <style>
@@ -55,27 +55,27 @@
 			<div class="row ">
 				<div class="col-md-5">
 					<div class="panel panel-default myPanel">
-						<div class="panel-heading" style="background-color:#d6ff99">
-								<h4 class="panel-title text-center">
-									<img src="resources/images/c3.jpg" />
-								</h4>
+						<div class="panel-heading" style="background-color: #d6ff99">
+							<h4 class="panel-title text-center">
+								<img src="resources/images/c3.jpg" />
+							</h4>
 						</div>
-						<div class="panel-body" style ="background-color:lightcyan">
-								<div style="width: 100%">
-									<iframe width="100%" height="350"
-										src="https://www.maps.ie/create-google-map/map.php?width=100%&amp;height=350&amp;hl=en&amp;coord=10.9490882,76.93577479999999&amp;q=10A%2C%20Kamakshi%20Nagar%20%2C%20Kovaipudur%2C%20Coimbatore+(Anahita%20Gardens)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=A&amp;output=embed"
-										frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
-										<a
-											href="https://www.mapsdirections.info/it/misura-distanza-area-google-maps.html">Misurare
-											l'area di una superficie con Google Maps</a>
-									</iframe>
-								</div>
-								<div class="panel-body " style="margin-bottom: 5px;">
-									<p style="text-align: left">
-										<strong>1122334455 </strong><br> <br> <strong>
-											e-mail us @ :abcdef@gmail.com </strong><br> <br>
-									</p>
-								</div>
+						<div class="panel-body" style="background-color: lightcyan">
+							<div style="width: 100%">
+								<iframe width="100%" height="350"
+									src="https://www.maps.ie/create-google-map/map.php?width=100%&amp;height=350&amp;hl=en&amp;coord=10.9490882,76.93577479999999&amp;q=10A%2C%20Kamakshi%20Nagar%20%2C%20Kovaipudur%2C%20Coimbatore+(Anahita%20Gardens)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=A&amp;output=embed"
+									frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+									<a
+										href="https://www.mapsdirections.info/it/misura-distanza-area-google-maps.html">Misurare
+										l'area di una superficie con Google Maps</a>
+								</iframe>
+							</div>
+							<div class="panel-body " style="margin-bottom: 5px;">
+								<p style="text-align: left">
+									<strong>Call us on :1122334455 </strong><br> <br> <strong>e-mail
+										us @ :abcdef@gmail.com </strong><br> <br>
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -85,12 +85,12 @@
 
 				<div class="col-md-7">
 					<div class="panel panel-default myPanel">
-						<div class="panel-heading"style="background-color:#d6ff99">
+						<div class="panel-heading" style="background-color: #d6ff99">
 							<h4 class="panel-title text-center header">
 								<img src="resources/images/e2.jpg" />
 							</h4>
 						</div>
-						<div class="panel-body" style="background-color:lightcyan">
+						<div class="panel-body" style="background-color: lightcyan">
 							<form:form id="enquiryForm" method="post" class="form-horizontal"
 								action="postEnquiry" modelAttribute="EnquiryForm">
 								<fieldset>
@@ -99,7 +99,8 @@
 										<label class="col-sm-2 control-label">First Name </label>
 										<div class="col-sm-8">
 											<form:input path="enFname" type="text" class="form-control"
-												name="enFname" placeholder="Enter your First Name" />
+												name="enFname" placeholder="Enter your First Name"
+												required="true" maxlength="25" />
 											<form:errors path="enFname" cssClass="error" />
 
 										</div>
@@ -109,7 +110,7 @@
 										<label class="col-sm-2 control-label">Last Name</label>
 										<div class="col-sm-8">
 											<form:input path="enLname" type="text" class="form-control"
-												name="enLname" placeholder="Enter your last Name" />
+												name="enLname" placeholder="Enter your last Name"  required="true" maxlength="25" />
 											<form:errors path="enLname" cssClass="error" />
 										</div>
 									</div>
@@ -117,7 +118,7 @@
 									<div class="form-group">
 										<label class="col-sm-2 control-label">E-mail </label>
 										<div class="col-sm-8">
-											<form:input path="enEmail" type="email" class="form-control"
+											<form:input path="enEmail" type="email" class="form-control" required="true" 
 												name="enEmail" placeholder="Enter your email address" />
 											<form:errors path="enEmail" cssClass="error" />
 										</div>
@@ -127,7 +128,8 @@
 										<label class="col-sm-2 control-label">Telephone </label>
 										<div class="col-sm-8">
 											<form:input name="enPhno" type="tel" class="form-control"
-												path="enPhno" placeholder="+CountryCode-MobileNumber" />
+												path="enPhno" placeholder="+CountryCode-MobileNumber"
+												maxlength="15" />
 											<form:errors path="enPhno" cssClass="error" />
 
 										</div>
@@ -136,7 +138,7 @@
 									<div class="form-group">
 										<label class="col-sm-2 control-label">Subject</label>
 										<div class="col-sm-8">
-											<form:input name="enSub" type="text" class="form-control"
+											<form:input name="enSub" type="text" class="form-control" required="true" maxlength="25"
 												path="enSub" placeholder="Enter Subject" />
 											<form:errors path="enSub" cssClass="error" />
 
@@ -146,8 +148,8 @@
 									<div class="form-group">
 										<label class="col-sm-2 control-label">Message</label>
 										<div class="col-sm-8">
-											<form:textarea class="form-control" name="enMsg" path="enMsg"
-												placeholder="Enter your enquiry for us here. We will get back to you within 2 business days."
+											<form:textarea class="form-control" name="enMsg" path="enMsg" required="true" maxlength="200"
+												placeholder="Enter your enquiry for us here. "
 												rows="7"></form:textarea>
 											<form:errors path="enMsg" cssClass="error" />
 

@@ -6,7 +6,7 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Admin Page- ShowOne user</title>
+<title>View User Profile</title>
 <style>
 .error {
 	color: red;
@@ -50,17 +50,85 @@
 
 <body ng-app="Anahita" ng-controller ="UserController">
 
+	<jsp:include page="navbar.jsp"></jsp:include>
+	<div style="margin-bottom: 25px"></div>
+   	<div class="row myPanel">
+			<div class=" col-md-6  col-sm-offset-2 panel panel-default panel-info">
+				<div class="panel-heading">
+					<h4><b>My Profile</b></h4>
+				</div>
+				<div class="panel-body">
+					<table class="table table-sm" style="border:solid  1pt navy">
+						
+						<tbody>
+						    <tr >
+								<td><b>User Name</b></td>
+								<td>{{olo.username}}</td>
+							</tr>
+							<tr >
+								<td><b>First Name</b></td>
+								<td>{{olo.userFname}}</td>
+							</tr>
+							<tr >
+								<td><b>Last Name</b></td>
+								<td>{{olo.userLname}}</td>
+							</tr>
+							<tr >
+								<td><b>Contact Address</b></td>
+								<td>{{olo.userAddress}}</td>
+							</tr>
+							<tr >
+								<td><b>Phone Number</b></td>
+								<td>{{olo.userPhno}}</td>
+							</tr>
+							<tr >
+								<td><b>Email</b> </td>
+								<td>{{olo.userEmail}}</td>
+							</tr>
+							<tr >
+								<td><b>Date of Birth</b></td>
+								<td>{{olo.userDob}}</td>
+							</tr>
+							
+							
+                             <tr  >
+								<td class="text-center" colspan="2">
+											<a href="editMyProfile?getuid={{olo.username}}"><button
+														type="submit" class="btn btn-primary">Edit Profile</button></a>
+											
+							     </td>
+							</tr>
+											
+											
+									
+									</tbody>
+								</table>
 
-<ul>
-
-    <li>{{olo.username}}</li>
-    <li>{{olo.userEmail}}</li>
-    <li>{{olo.urole}}</li>
-    <li>{{olo.Status}}</li>
-  
-
-
-</ul>
+							</div>
+						</div>
+					</div>
+			
 </body>
 
-</html>
+<!--START OF PAGE FOOTER -->
+<jsp:include page="footer.jsp"></jsp:include>
+</html>   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

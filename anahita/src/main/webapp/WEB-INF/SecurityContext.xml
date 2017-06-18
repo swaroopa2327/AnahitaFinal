@@ -15,8 +15,7 @@ http://www.springframework.org/schema/security/spring-security-4.2.xsd">
   <security:intercept-url pattern="/SignUp" access="permitAll"/>
   <security:intercept-url pattern="/LoginPage" access="permitAll"/>
   
-  <security:intercept-url pattern="/AdminHome" access="hasRole('ROLE_ADMIN')" /> 
-    
+  <security:intercept-url pattern="/AdminHome" access="hasRole('ROLE_ADMIN')" />    
   <security:intercept-url pattern="/ManageCategory" access="hasRole('ROLE_ADMIN')" />
   <security:intercept-url pattern="/addCategory" access="hasRole('ROLE_ADMIN')" />
   <security:intercept-url pattern="/deletecategory" access="hasRole('ROLE_ADMIN')" />
@@ -31,6 +30,14 @@ http://www.springframework.org/schema/security/spring-security-4.2.xsd">
   <security:intercept-url pattern="/addSupplier" access="hasRole('ROLE_ADMIN')" />
   <security:intercept-url pattern="/removesupplier" access="hasRole('ROLE_ADMIN')" />
   <security:intercept-url pattern="/editsupplier" access="hasRole('ROLE_ADMIN')" />
+  
+  <security:intercept-url pattern="/viewMyProfile" access="hasRole('ROLE_USER')" />
+  <security:intercept-url pattern="/editMyProfile" access="hasRole('ROLE_USER')" />
+  <security:intercept-url pattern="/updateUser" access="hasRole('ROLE_USER')" />
+  
+           
+           
+           
     
     <security:form-login login-page="/Login"
       					default-target-url="/" 

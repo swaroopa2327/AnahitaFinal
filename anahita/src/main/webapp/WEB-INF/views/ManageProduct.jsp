@@ -52,8 +52,6 @@
 			});
 </script>
 
-
-
 </head>
 
 <body ng-app="Anahita" ng-controller="ProductController">
@@ -72,7 +70,7 @@
 				<div class="col-xs-7 col-xs-offset-1">
 					<c:if test="${check}">
 
-						<div class="panel panel-default ">
+						<div class="panel panel-info ">
 							<div class="panel-heading">
 								<h4>
 									<b>Add New Product</b>
@@ -190,7 +188,7 @@
 					<div class="col-xs-6">
 						<c:if test="${!check}">
 
-							<div class="panel panel-default ">
+							<div class="panel panel-info ">
 								<div class="panel-heading">
 									<h4>
 										<b>Edit Product</b>
@@ -302,7 +300,7 @@
 			<div class="container myPanel">
 				<div class="row ">
 					<div class="col-sm-12 ">
-						<div class="panel panel-default">
+						<div class="panel panel-info">
 							<div class="panel-heading">
 								<h4>
 									<b>View Product List </b>

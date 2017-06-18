@@ -16,7 +16,7 @@ public interface ProductDao {
 		public String updateProduct(String prod_id,Product prod);
 		public String deleteProduct(String id);
 		public String viewProduct();
-		//public String viewProductByCategory();
+		public String viewProductByCategory(String cat_id);
 		public Product viewOneProduct(String prod_id);
 		
 		

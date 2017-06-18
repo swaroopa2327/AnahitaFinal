@@ -42,7 +42,7 @@
     <div class="panel-body alert  alert-success"">
               <p style ="color:black"  >
               <strong> ${msg}</strong><br><br>
-              <a class="btn btn-primary" href="LoginPage">Login</a> to  explore and access complete  features!
+              <a class="btn btn-primary" href="Login">Login</a> to  explore and access complete  features!
               </p>
     </div>
   </div>

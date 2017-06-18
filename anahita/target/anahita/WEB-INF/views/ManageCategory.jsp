@@ -70,7 +70,7 @@
 				<div class="col-xs-12 ">
 				<c:if test="${check}">
 				
-					<div class="panel panel-default ">
+					<div class="panel panel-info">
 						<div class="panel-heading">
 							<h4>
 								<b>Add Category</b>
@@ -124,7 +124,7 @@
 				<div class="col-xs-10">
 				<c:if test="${!check}">
 				
-					<div class="panel panel-default  ">
+					<div class="panel panel-info ">
 						<div class="panel-heading">
 							<h3>
 								<b>Edit Category</b>
@@ -175,7 +175,7 @@
 				<div class="container myPanel">
 					<div class="row ">
 						<div class="col-sm-12 ">
-							<div class="panel panel-default">
+							<div class="panel panel-info">
 								<div class="panel-heading" >
 									<h4><b>View Category List </b></h4>
 								</div>

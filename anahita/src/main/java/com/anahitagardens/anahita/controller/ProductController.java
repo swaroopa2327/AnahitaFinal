@@ -46,17 +46,6 @@ public class ProductController {
 		return mv;
 	} 
 	
-	@RequestMapping("/viewProductsByCategory")
-	public ModelAndView viewOneCategoryProducts(@RequestParam("getId") String cat_id,HttpSession session) 
-	{
-		String controllerProdList = pdao.viewProduct();
-		String controllerCatList = cdao.viewCategory();
-		ModelAndView mv = new ModelAndView("ViewProducts");
-		mv.addObject("modelProdList", controllerProdList);
-		mv.addObject("modelCatList", controllerCatList);
-		mv.addObject("catpassid", cat_id);
-		return mv;
-	}
 	
 	@RequestMapping("/zoomProduct")
 	public ModelAndView viewProductDesc(@RequestParam("getId") String prod_id,HttpSession session) {
@@ -86,8 +75,10 @@ public class ProductController {
 
 	@RequestMapping(value = "/addProduct", method = RequestMethod.POST)
 	public ModelAndView insert_product(@Valid @ModelAttribute("manageProduct") Product prod,
-			BindingResult bindingResult,HttpSession session) {
-		if (bindingResult.hasErrors()) {
+			BindingResult bindingResult,HttpSession session) 
+	{
+		if (bindingResult.hasErrors())
+		{
 			String controllerProdList = pdao.viewProduct();
 			String controllerCatList = cdao.viewCategory();
 			String controllerSupList = sdao.viewSupplier();
@@ -97,10 +88,12 @@ public class ProductController {
 			mv.addObject("modelSupList", controllerSupList);
 			mv.addObject("check", "true");
 			return mv;
-		} else {
+		} 
+		else 
+		{
 			System.out.println("Save data into database");
 			pdao.insertProduct(prod);
-			String path = "E:\\Project\\anahita\\src\\main\\webapp\\resources\\ProductImages\\";
+			String path = "E:\\Anahita_Gardens007\\anahita\\src\\main\\webapp\\resources\\ProductImages\\";
 			path = path + String.valueOf(prod.getpId()) + "" + ".jpg";
 			MultipartFile fileDetails = prod.getpImage();
 			if (!fileDetails.isEmpty()) {
@@ -150,7 +143,7 @@ public ModelAndView editOneProduct(@RequestParam("getpid") String pid,HttpSessio
 public ModelAndView updateproduct(@ModelAttribute("manageProduct") Product prod,HttpSession session)
 {
 	pdao.updateProduct(prod.getpId(), prod);
-    String path = "E:\\Project\\anahita\\src\\main\\webapp\\resources\\ProductImages\\";
+    String path = "E:\\Anahita_Gardens007\\anahita\\src\\main\\webapp\\resources\\ProductImages\\";
 	path = path + String.valueOf(prod.getpId()) + "" + ".jpg";
 	MultipartFile filedet = prod.getpImage();
 	if (!filedet.isEmpty()) {
@@ -184,6 +177,19 @@ public ModelAndView removeProduct(@PathVariable("Id") String pId,HttpSession ses
 	pdao.deleteProduct(pId);
 	return new ModelAndView("redirect:/ManageProducts");
 }
+
+@RequestMapping("/viewProductsByCategory")
+public ModelAndView viewOneCategoryProducts(@RequestParam("getId") String cat_id,HttpSession session) 
+{
+	String controllerProdList = pdao.viewProductByCategory(cat_id);
+	String controllerCatList = cdao.viewCategory();
+	ModelAndView mv = new ModelAndView("OneCategoryProducts");
+	mv.addObject("modelProdList", controllerProdList);
+	mv.addObject("modelCatList", controllerCatList);
+	mv.addObject("catpassid", cat_id);
+	return mv;
+}
+
 
 
 }

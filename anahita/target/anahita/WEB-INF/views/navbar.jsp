@@ -1,5 +1,6 @@
-
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<html>
+<body>
 		<nav
 			class="navbar navbar-default navbar-fixed-top no-padding no-margin  ">
 			<div class="container ">
@@ -24,7 +25,7 @@
 							<li><a href="ManageSuppliers">Manage Suppliers </a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
-							<li>Welcome ${sessionScope.AdminLoggedIn}</li>
+							<li><a href="#">Welcome ${sessionScope.AdminLoggedIn}</a></li>
 							<li><a href="logout">Logout</a></li>
 						</ul>
 				 	 </c:when>
@@ -33,43 +34,22 @@
 				 	    <ul class="nav navbar-nav">
 							<li class="active"><a href="Home"><span
 								class="glyphicon glyphicon-home"></span> Home </a></li>
-							<li><a href="AboutUs"><div class="hidden-md hidden-sm">About
+							<li><a href="AboutUs"><div class ="hidden-md hidden-sm">About
 									Us</div> <span
 								class="glyphicon glyphicon-info-sign visible-sm visible-md"></span>
 								</a></li>
-							<li class="dropdown"><a href="ShowProducts"
-							class="dropdown-toggle" data-toggle="dropdown"> Our Products
-								<b class="caret"></b></a>
-								<ul class="dropdown-menu outer" style="list-style-type: square">
-									<li class="divider"></li>
-									<li><a href="ShowProducts"
-									style="color: darkblue; font-size: 11pt; font-weight: bold">1.
-										Flowering Annuals</a></li><br>
-									<li><a href="ShowProducts"
-									style="color: darkblue; font-size: 11pt; font-weight: bold">2.
-										Flowering Perennials</a></li><br>
-									<li><a href="ShowProducts"
-									style="color: darkblue; font-size: 11pt; font-weight: bold">3.
-										Foliage Plants </a></li><br>
-									<li><a href="ShowProducts"
-									style="color: darkblue; font-size: 11pt; font-weight: bold">4.
-										Indoor Plants</a></li><br>
-									<li><a href="ShowProducts"
-									style="color: darkblue; font-size: 11pt; font-weight: bold">5.
-										Orchids , Bromeliads and Aeriel Plants</a></li><br>
-									<li class="divider"></li>
-									<li><a href="ShowProducts"
-									style="color: darkblue; font-size: 11pt; font-weight: bold">6.
-										Pots and Planters</a></li>
-									<li class="divider"></li>
-									<li><a href="ShowProducts"
-									style="color: darkblue; font-size: 11pt; font-weight: bold">7.
-										Garden Decor</a></li>
-							    </ul>
-							  </li>
 							  <li><a href="ContactUs"><div class="hidden-md hidden-sm">Contact
 									Us</div> <span
 								class="glyphicon glyphicon-envelope visible-sm visible-md"></span></a></li>
+								<li><a href="ShowProducts"><div class="hidden-md hidden-sm">Products
+								</div> <span
+								class="glyphicon glyphicon-shopping-cart visible-sm visible-md"></span>
+								</a></li>
+								<li><a href="viewMyProfile?getId=${sessionScope.UserLoggedIn}">My Profile<span
+							class="glyphicon glyphicon-user " style="margin-left:10px"></a></li>
+								<li><a href="#">My Cart <span
+							class="glyphicon glyphicon-shopping-cart " style="margin-left:10px"></a></li>
+							
 					      </ul>
 					      <ul class="nav navbar-nav navbar-right">
 							<li><a href="#"><div class="hidden-md hidden-sm ">Hello  ${sessionScope.UserLoggedIn}
@@ -90,51 +70,14 @@
 									Us</div> <span
 								class="glyphicon glyphicon-info-sign visible-sm visible-md"></span>
 						</a></li>
-						<li class="dropdown"><a href="ShowProducts"
-							class="dropdown-toggle" data-toggle="dropdown"> Our Products
-								<b class="caret"></b>
-						</a>
-							<ul class="dropdown-menu outer" style="list-style-type: square">
-								<li class="divider"></li>
-								<li><a href="ShowProducts"
-									style="color: darkblue; font-size: 11pt; font-weight: bold">1.
-										Flowering Annuals</a></li>
-								<br>
-
-								<li><a href="ShowProducts"
-									style="color: darkblue; font-size: 11pt; font-weight: bold">2.
-										Flowering Perennials</a></li>
-								<br>
-
-								<li><a href="ShowProducts"
-									style="color: darkblue; font-size: 11pt; font-weight: bold">3.
-										Foliage Plants </a></li>
-								<br>
-								<li><a href="ShowProducts"
-									style="color: darkblue; font-size: 11pt; font-weight: bold">4.
-										Indoor Plants</a></li>
-								<br>
-								<li><a href="ShowProducts"
-									style="color: darkblue; font-size: 11pt; font-weight: bold">5.
-										Orchids , Bromeliads and Aeriel Plants</a></li>
-								<br>
-
-								<li class="divider"></li>
-
-								<li><a href="ShowProducts"
-									style="color: darkblue; font-size: 11pt; font-weight: bold">6.
-										Pots and Planters</a></li>
-
-								<li class="divider"></li>
-
-								<li><a href="ShowProducts"
-									style="color: darkblue; font-size: 11pt; font-weight: bold">7.
-										Garden Decor</a></li>
-							</ul></li>
 						<li><a href="ContactUs"><div class="hidden-md hidden-sm">Contact
 									Us</div> <span
 								class="glyphicon glyphicon-envelope visible-sm visible-md"></span>
 						</a></li>
+						<li><a href="ShowProducts"><div class="hidden-md hidden-sm">Products
+								</div> <span
+								class="glyphicon glyphicon-shopping-cart visible-sm visible-md"></span>
+								</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 
@@ -164,3 +107,5 @@
 	</div>
 </div>
 <!-- End of Banner -->
+</body>
+</html>

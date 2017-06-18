@@ -43,8 +43,13 @@
 								class="glyphicon glyphicon-envelope visible-sm visible-md"></span></a></li>
 								<li><a href="ShowProducts"><div class="hidden-md hidden-sm">Products
 								</div> <span
-								class="glyphicon glyphicon-info-sign visible-sm visible-md"></span>
+								class="glyphicon glyphicon-shopping-cart visible-sm visible-md"></span>
 								</a></li>
+								<li><a href="viewMyProfile?getId=${sessionScope.UserLoggedIn}">My Profile<span
+							class="glyphicon glyphicon-user " style="margin-left:10px"></a></li>
+								<li><a href="#">My Cart <span
+							class="glyphicon glyphicon-shopping-cart " style="margin-left:10px"></a></li>
+							
 					      </ul>
 					      <ul class="nav navbar-nav navbar-right">
 							<li><a href="#"><div class="hidden-md hidden-sm ">Hello  ${sessionScope.UserLoggedIn}
@@ -71,7 +76,7 @@
 						</a></li>
 						<li><a href="ShowProducts"><div class="hidden-md hidden-sm">Products
 								</div> <span
-								class="glyphicon glyphicon-info-sign visible-sm visible-md"></span>
+								class="glyphicon glyphicon-shopping-cart visible-sm visible-md"></span>
 								</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">

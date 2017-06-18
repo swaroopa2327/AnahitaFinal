@@ -53,7 +53,7 @@ margin-left:5px;
 		angular.module('Anahita', []).controller('ProductController',
 			function($scope) {
 				$scope.plo = pl;
-				$scope.clo = cl;		
+				$scope.clo = cl;
 
 			});
 </script>
@@ -74,71 +74,67 @@ margin-left:5px;
 <!-- Products  Block -->
 
 	<div class="container" style ="margin-top:-5px">
-		<div class="row">
 			
-			<div class="col-md-12 col-xs-offset-1" style="margin-left: 10px" >
-				 <div class="panel panel-default " ng-repeat = "c in clo |orderBy:'catId'">
+				 <div class="panel panel-default row text-center" ng-repeat = "c in clo |orderBy:'catId'" >
 				<!-- ng-repeat = "c in clo |orderBy:'catId'" | ng-repeat ="p in plo| filter: c.catId" -->
 					  <div class="panel-heading  text-center Category" style="background-color:mistyrose;color:black" >{{c.catName}}</div>
 					  <div class="panel-body" style="background-color:cornsilk" >
 						<ul class="list-inline " >
 							<li  class="menu" ng-repeat ="p in plo | filter: c.catId" >
-								<div class="panel panel-default " style="width: 250px;height:325px">
+								<div class="panel panel-default col-xs-12"  >
 									<div class="panel-heading text-center"
 										style="background-color:lightcyan ;margin-top:2px">
 										<a href="zoomProduct?getId={{p.pId}}" id="producta">
 											<div>
-												<img class="img-rounded img-fluid"
-													src="resources/ProductImages/{{p.pId}}.jpg" height="200px"
-													width="225px"> 
-												
+												<img class="img-rounded "
+													src="resources/ProductImages/{{p.pId}}.jpg" height="175px"
+													width="175px"> 				
 												<h5 class="text-center"style="color:darkred;font-size:11pt;margin-top:6px"><b>{{p.pName}}</b></h5>
 												<h6 class="text-center" style="color:black;font-size:10pt;margin-bottom:2px"><b>Rs.{{p.pPrice}}</b></h6>
 											</div>
 										</a>
 									</div>
-
+                           <c:if test="${sessionScope.UserLoggedIn ==null}">
 									<div class="panel-body " >
-										<a href="buyProduct" id="producta">
-											<button  class="btn btn-sm "style="background-color:darkgreen;font-size:8pt ;color:white;margin-top:-3px">
-												Buy Now <span class="glyphicon glyphicon-shopping-cart" style="margin-left:5px"></span>
+										<a href="Login" id="producta">
+											<button  class="btn btn-xs pull-left"style="background-color:darkgreen;font-size:8pt ;color:white;margin-top:-3px">
+												Buy Now <span class="glyphicon glyphicon-shopping-cart" style="margin-left:4px"></span>
 											</button>
 										</a> 
 										
 										<a href="zoomProduct?getId={{p.pId}}" id="producta">
-											<button id="addtocartbutton" class="btn btn-sm pull-right"style="background-color:darkblue;font-size:8pt ;color:white;margin-top:-3px">
-												View Details<span class="glyphicon glyphicon-info-sign" style="margin-left:5px" ></span>
+											<button id="addtocartbutton" class="btn btn-xs pull-right"style="background-color:darkblue;font-size:8pt ;color:white;margin-top:-3px">
+												View Details<span class="glyphicon glyphicon-info-sign" style="margin-left:4px" ></span>
 											</button>
 										</a> 															
 									</div>
-									
-									<!--   The above button will be replaced by add to cart button when user is logged in  
-									<div class="panel-body " >
-										<a href="viewproduct?getId={{p.ProductId}}" id="producta">
-											<button id="addtocartbutton" class="btn btn-sm "style="background-color:darkgreen;font-size:8pt ;color:white;margin-top:-3px">
-												Add to Cart <span class="glyphicon glyphicon-shopping-cart" style="margin-left:5px"></span>
+							</c:if>
+							
+						   <c:if test="${sessionScope.UserLoggedIn !=null}">
+							
+							<div class="panel-body " >
+										<a href="" id="producta">
+											<button  class="btn btn-xs "style="background-color:darkgreen;font-size:8pt ;color:white;margin-top:-3px">
+												Add to cart <span class="glyphicon glyphicon-shopping-cart" style="margin-left:4px"></span>
 											</button>
 										</a> 
 										
 										<a href="zoomProduct?getId={{p.pId}}" id="producta">
-											<button id="addtocartbutton" class="btn btn-sm pull-right"style="background-color:darkblue;font-size:8pt ;color:white;margin-top:-3px">
-												View Details<span class="glyphicon glyphicon-info-sign" style="margin-left:5px" ></span>
+											<button id="addtocartbutton" class="btn btn-xs pull-right"style="background-color:darkblue;font-size:8pt ;color:white;margin-top:-3px">
+												View Details<span class="glyphicon glyphicon-info-sign" style="margin-left:4px" ></span>
 											</button>
 										</a> 															
-									</div>  -->
-									
-									
-									
-									
-								</div>
+									</div>
+							</c:if>
+							
+							</div>
 							</li>
 						</ul>
 					</div>
 				 </div>
 				
 			</div>
-		</div>
-	</div>
+		
 
 
 
