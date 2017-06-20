@@ -19,10 +19,11 @@
 
   
     <context:component-scan base-package="com.anahitagardens.anahita.controller" />
+        <tx:annotation-driven />		
+    
     
     <mvc:annotation-driven />
     
-    <tx:annotation-driven />		
           
     
    	
@@ -34,7 +35,7 @@
 	      <property name="password" value=""/>
 	   </bean>
         
-        <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="hibernateProperties">
 			<props>
@@ -44,14 +45,14 @@
 			</props>
 		</property>
 		<property name="packagesToScan">
-		<list>
-		<value>com.anahitagardens.anahita.model</value>
-		</list>
+			<list>
+		       <value>com.anahitagardens.anahita.model</value>
+		    </list>
 		</property>
 	</bean>	
 	
 	<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
-	<property name="sessionFactory" ref="sessionFactory" />
+		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	
 	

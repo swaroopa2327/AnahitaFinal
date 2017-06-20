@@ -98,7 +98,7 @@
 
 	<!-- End of Carousel -->
 	
-	<div class="container " style="margin-top: 25px" >
+	<div class="container " style="margin-top: 5px" >
 	    <div class="panel-heading col-md-12 " text-center"><h5 style="font-size:11pt"><b>Featured Categories</b></h5></div>
 				<ul class="list-inline row " style="margin-left:2px">
 					<li class="menu col-md-2" >
